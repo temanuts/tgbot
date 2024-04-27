@@ -142,11 +142,9 @@ def help_command(update: Update, context: CallbackContext):
     """
     context.bot.send_message(chat_id=chat_id, text=help_text)
 
-# Add the help command handler
 help_handler = CommandHandler('help', help_command)
 dispatcher.add_handler(help_handler)
 
-# Add handlers for the start command, clear command, and messages
 start_handler = CommandHandler('start', start)
 clear_handler = CommandHandler('clear', clear)
 message_handler = MessageHandler(Filters.text & (~Filters.command), handle_message)
